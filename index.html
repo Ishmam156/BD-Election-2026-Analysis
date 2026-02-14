@@ -396,8 +396,14 @@
     }
 
     /* ══ CHART 1 — Popular vote vs seats ══ */
-    .pvote-compare .sbar-track { height: 38px; }
-    .pvote-compare .sbar-chart { gap: 1.1rem; }
+    .pvote-compare .sbar-track {
+      height: 38px;
+    }
+
+    .pvote-compare .sbar-chart {
+      gap: 1.1rem;
+    }
+
     .pvote-compare .sbar-label {
       font-size: 0.65rem;
       font-weight: 700;
@@ -405,7 +411,10 @@
       text-transform: uppercase;
       color: var(--ink-muted);
     }
-    .pvote-compare .sbar-seg-label { font-size: 0.66rem; }
+
+    .pvote-compare .sbar-seg-label {
+      font-size: 0.66rem;
+    }
 
     .pvote-legend {
       display: flex;
@@ -413,6 +422,7 @@
       gap: 0.5rem 1.1rem;
       margin-bottom: 1.2rem;
     }
+
     .pvote-legend-item {
       display: flex;
       align-items: center;
@@ -422,6 +432,7 @@
       font-weight: 600;
       color: var(--ink-muted);
     }
+
     .pvote-legend-swatch {
       width: 12px;
       height: 12px;
@@ -437,6 +448,7 @@
       padding-top: 0.75rem;
       border-top: 1px solid var(--rule);
     }
+
     .pvote-delta-item {
       display: flex;
       align-items: center;
@@ -445,11 +457,18 @@
       font-size: 0.68rem;
       color: var(--ink-muted);
     }
+
     .pvote-delta-item strong {
       font-size: 0.7rem;
     }
-    .pvote-up   { color: #1a7a3c; }
-    .pvote-down { color: #b91c1c; }
+
+    .pvote-up {
+      color: #1a7a3c;
+    }
+
+    .pvote-down {
+      color: #b91c1c;
+    }
 
     /* ══ CHART 2 — Vertical bar chart ══ */
     .vbar-chart {
@@ -1104,12 +1123,12 @@
       <div class="callout-card">
         <span class="callout-number" style="color: var(--bnp)">212</span>
         <span class="callout-rule"></span>
-        <span class="callout-label">BNP Seats</span>
+        <span class="callout-label">BNP Alliance Seats</span>
       </div>
       <div class="callout-card">
         <span class="callout-number" style="color: var(--jamaat)">71</span>
         <span class="callout-rule"></span>
-        <span class="callout-label">Jamaat Seats</span>
+        <span class="callout-label">Jamaat Alliance Seats</span>
       </div>
       <div class="callout-card">
         <span class="callout-number" style="color: var(--ncp)">6</span>
@@ -1132,11 +1151,11 @@
       <h2 class="section-heading">A Majority, Earned</h2>
       <div class="prose">
         <p class="drop-cap">
-          BNP won. Convincingly. They contested 291 seats and took 212 &mdash;
-          a working majority that governs on its own terms, without coalition
-          haggling or backroom deals. Jamaat finished with 71 seats, their
-          highest-ever result, up from a previous best of 19 in 2001. NCP,
-          contesting its first election, won 6. The map is green, the headlines
+          BNP won. Convincingly. They contested 291 seats and took 209 &mdash; with allied parties, the BNP alliance
+          secured 212 in total, a working majority that governs on its own terms,
+          without coalition haggling or backroom deals. Jamaat and its allies finished
+          with 71 seats, their highest-ever result; NCP, contesting its first election, won 6. The map is green, the
+          headlines
           are decisive &mdash; but 70.6 million people voted in this election,
           and where those votes went tells a different story from where the
           seats landed.
@@ -1149,17 +1168,17 @@
       <div class="chart-block pvote-compare" data-animate-group>
         <div class="chart-title">Votes vs. Seats</div>
         <div class="chart-subtitle">
-          BNP&rsquo;s 53% vote share became 71% of seats &mdash;
-          every other party received fewer seats than their vote share warranted.
+          BNP Alliance&rsquo;s 55% vote share became 71% of seats &mdash;
+          every other bloc received fewer seats than their vote share warranted.
         </div>
 
         <!-- Legend -->
         <div class="pvote-legend">
           <div class="pvote-legend-item">
-            <span class="pvote-legend-swatch" style="background:var(--bnp)"></span>BNP
+            <span class="pvote-legend-swatch" style="background:var(--bnp)"></span>BNP Alliance
           </div>
           <div class="pvote-legend-item">
-            <span class="pvote-legend-swatch" style="background:var(--jamaat)"></span>Jamaat
+            <span class="pvote-legend-swatch" style="background:var(--jamaat)"></span>Jamaat Alliance
           </div>
           <div class="pvote-legend-item">
             <span class="pvote-legend-swatch" style="background:var(--ncp)"></span>NCP
@@ -1174,15 +1193,19 @@
           <div class="sbar-row">
             <span class="sbar-label">National<br>Vote</span>
             <div class="sbar-track">
-              <div class="sbar-seg" style="background:var(--bnp);--target-w:53.5%" data-animate data-party="BNP" data-pct="53.5%">
-                <span class="sbar-seg-label">BNP 53.5%</span>
+              <div class="sbar-seg" style="background:var(--bnp);--target-w:55.1%" data-animate data-party="BNP"
+                data-pct="55.1%">
+                <span class="sbar-seg-label">BNP Alliance 55.1%</span>
               </div>
-              <div class="sbar-seg" style="background:var(--jamaat);--target-w:33.2%" data-animate data-party="Jamaat" data-pct="33.2%">
-                <span class="sbar-seg-label">Jamaat 33.2%</span>
+              <div class="sbar-seg" style="background:var(--jamaat);--target-w:36.3%" data-animate data-party="Jamaat"
+                data-pct="36.3%">
+                <span class="sbar-seg-label">Jamaat Alliance 36.3%</span>
               </div>
-              <div class="sbar-seg" style="background:var(--ncp);--target-w:3.2%" data-animate data-party="NCP" data-pct="3.2%"></div>
-              <div class="sbar-seg" style="background:var(--other);--target-w:10.1%" data-animate data-party="Others" data-pct="10.1%">
-                <span class="sbar-seg-label">10.1%</span>
+              <div class="sbar-seg" style="background:var(--ncp);--target-w:3.2%" data-animate data-party="NCP"
+                data-pct="3.2%"></div>
+              <div class="sbar-seg" style="background:var(--other);--target-w:5.4%" data-animate data-party="Others"
+                data-pct="5.4%">
+                <span class="sbar-seg-label">5.4%</span>
               </div>
             </div>
           </div>
@@ -1191,14 +1214,18 @@
           <div class="sbar-row">
             <span class="sbar-label">Parlia&shy;mentary<br>Seats</span>
             <div class="sbar-track">
-              <div class="sbar-seg" style="background:var(--bnp);--target-w:70.7%" data-animate data-party="BNP" data-pct="70.7%">
-                <span class="sbar-seg-label">BNP 70.7%</span>
+              <div class="sbar-seg" style="background:var(--bnp);--target-w:71.4%" data-animate data-party="BNP"
+                data-pct="71.4%">
+                <span class="sbar-seg-label">BNP Alliance 71.4%</span>
               </div>
-              <div class="sbar-seg" style="background:var(--jamaat);--target-w:23.7%" data-animate data-party="Jamaat" data-pct="23.7%">
-                <span class="sbar-seg-label">Jamaat 23.7%</span>
+              <div class="sbar-seg" style="background:var(--jamaat);--target-w:23.9%" data-animate data-party="Jamaat"
+                data-pct="23.9%">
+                <span class="sbar-seg-label">Jamaat Alliance 23.9%</span>
               </div>
-              <div class="sbar-seg" style="background:var(--ncp);--target-w:2.0%" data-animate data-party="NCP" data-pct="2.0%"></div>
-              <div class="sbar-seg" style="background:var(--other);--target-w:3.7%" data-animate data-party="Others" data-pct="3.7%"></div>
+              <div class="sbar-seg" style="background:var(--ncp);--target-w:2.0%" data-animate data-party="NCP"
+                data-pct="2.0%"></div>
+              <div class="sbar-seg" style="background:var(--other);--target-w:2.7%" data-animate data-party="Others"
+                data-pct="2.7%"></div>
             </div>
           </div>
         </div>
@@ -1206,12 +1233,12 @@
         <!-- Delta annotations -->
         <div class="pvote-delta-row">
           <div class="pvote-delta-item">
-            <strong style="color:var(--bnp)">BNP</strong>
-            <span class="pvote-up">+17.2 pts &uarr;</span>
+            <strong style="color:var(--bnp)">BNP Alliance</strong>
+            <span class="pvote-up">+16.2 pts &uarr;</span>
           </div>
           <div class="pvote-delta-item">
-            <strong style="color:var(--jamaat)">Jamaat</strong>
-            <span class="pvote-down">&minus;9.5 pts &darr;</span>
+            <strong style="color:var(--jamaat)">Jamaat Alliance</strong>
+            <span class="pvote-down">&minus;12.4 pts &darr;</span>
           </div>
           <div class="pvote-delta-item">
             <strong style="color:var(--ncp)">NCP</strong>
@@ -1219,14 +1246,16 @@
           </div>
           <div class="pvote-delta-item">
             <strong style="color:var(--other)">Others</strong>
-            <span class="pvote-down">&minus;6.4 pts &darr;</span>
+            <span class="pvote-down">&minus;2.7 pts &darr;</span>
           </div>
         </div>
 
         <p class="viz-source">
-          Vote share from winner and runner-up tallies per constituency (67.6M votes attributed).
-          Total votes cast: 70,640,056 (Daily Star, 14 February 2026, based on referendum participation figures).
-          Seat share out of 300 parliamentary seats.
+          &ldquo;BNP Alliance&rdquo; and &ldquo;Jamaat Alliance&rdquo; refer to their respective electoral coalitions;
+          NCP is shown separately.
+          Vote share from winner and runner-up tallies per constituency (66.9M votes attributed). Seat share out of 297
+          declared seats.
+          Jamaat Alliance excludes NCP, which is shown separately.
         </p>
       </div>
     </div>
@@ -1290,11 +1319,11 @@
             <div class="vbar-chart" id="chart2">
               <!-- 0–5% -->
               <div class="vbar-col">
-                <div class="vbar-count-label">52</div>
+                <div class="vbar-count-label">53</div>
                 <div class="vbar-bar-wrap">
                   <div class="vbar-fill" style="
                         background: #2a8c5a;
-                        --target-h: calc(52/64 * 200px);
+                        --target-h: calc(53/62 * 200px);
                       " data-animate></div>
                 </div>
               </div>
@@ -1305,18 +1334,18 @@
                 <div class="vbar-bar-wrap">
                   <div class="vbar-fill" style="
                         background: #4a9e55;
-                        --target-h: calc(36/64 * 200px);
+                        --target-h: calc(36/62 * 200px);
                       " data-animate></div>
                 </div>
               </div>
 
               <!-- 10–15% -->
               <div class="vbar-col">
-                <div class="vbar-count-label">43</div>
+                <div class="vbar-count-label">44</div>
                 <div class="vbar-bar-wrap">
                   <div class="vbar-fill" style="
                         background: #85b84a;
-                        --target-h: calc(43/64 * 200px);
+                        --target-h: calc(44/62 * 200px);
                       " data-animate></div>
                 </div>
               </div>
@@ -1327,7 +1356,7 @@
                 <div class="vbar-bar-wrap">
                   <div class="vbar-fill" style="
                         background: #c8c840;
-                        --target-h: calc(34/64 * 200px);
+                        --target-h: calc(34/62 * 200px);
                       " data-animate></div>
                 </div>
               </div>
@@ -1338,7 +1367,7 @@
                 <div class="vbar-bar-wrap">
                   <div class="vbar-fill" style="
                         background: #f5a623;
-                        --target-h: calc(33/64 * 200px);
+                        --target-h: calc(33/62 * 200px);
                       " data-animate></div>
                 </div>
               </div>
@@ -1349,18 +1378,18 @@
                 <div class="vbar-bar-wrap">
                   <div class="vbar-fill" style="
                         background: #e86830;
-                        --target-h: calc(27/64 * 200px);
+                        --target-h: calc(27/62 * 200px);
                       " data-animate></div>
                 </div>
               </div>
 
               <!-- 30%+ -->
               <div class="vbar-col">
-                <div class="vbar-count-label">64</div>
+                <div class="vbar-count-label">62</div>
                 <div class="vbar-bar-wrap">
                   <div class="vbar-fill" style="
                         background: #d43d31;
-                        --target-h: calc(64/64 * 200px);
+                        --target-h: calc(62/62 * 200px);
                       " data-animate></div>
                 </div>
               </div>
@@ -1398,13 +1427,13 @@
       <h2 class="section-heading">One in Three Close Races Goes to Jamaat</h2>
       <div class="prose">
         <p>
-          Seventy-one seats. That is four times Jamaat&rsquo;s previous best.
+          Sixty-eight seats. That is three and a half times Jamaat&rsquo;s previous best.
           And here is the context that makes it even more striking: in roughly
           90% of the seats they contested, Jamaat was fielding a candidate for
           the first time in 26 years. For a generation, they had been
           BNP&rsquo;s coalition partner &mdash; given 30 seats, asked to
           support BNP in the rest. This election was the first time they ran
-          independently across the country. And they still won 71.
+          independently across the country. And they still won 68.
         </p>
         <p>
           In the closest races &mdash; seats decided by under 5% of votes cast
@@ -1428,10 +1457,10 @@
 
         <div class="chart-legend">
           <div class="legend-item">
-            <span class="legend-swatch" style="background: var(--bnp)"></span>BNP
+            <span class="legend-swatch" style="background: var(--bnp)"></span>BNP Alliance
           </div>
           <div class="legend-item">
-            <span class="legend-swatch" style="background: var(--jamaat)"></span>Jamaat
+            <span class="legend-swatch" style="background: var(--jamaat)"></span>Jamaat Alliance
           </div>
           <div class="legend-item">
             <span class="legend-swatch" style="background: var(--ncp)"></span>NCP
@@ -1447,21 +1476,21 @@
           <div class="sbar-row">
             <span class="sbar-label">0%–5%</span>
             <div class="sbar-track">
-              <div class="sbar-seg" style="background: var(--bnp); --target-w: 53.8%" data-animate data-party="BNP"
-                data-pct="53.8%">
-                <span class="sbar-seg-label">53.8%</span>
+              <div class="sbar-seg" style="background: var(--bnp); --target-w: 52.8%" data-animate data-party="BNP"
+                data-pct="52.8%">
+                <span class="sbar-seg-label">52.8%</span>
               </div>
-              <div class="sbar-seg" style="background: var(--jamaat); --target-w: 30.8%" data-animate
-                data-party="Jamaat" data-pct="30.8%">
-                <span class="sbar-seg-label">30.8%</span>
+              <div class="sbar-seg" style="background: var(--jamaat); --target-w: 32.1%" data-animate
+                data-party="Jamaat" data-pct="32.1%">
+                <span class="sbar-seg-label">32.1%</span>
               </div>
-              <div class="sbar-seg" style="background: var(--ncp); --target-w: 5.8%" data-animate data-party="NCP"
-                data-pct="5.8%">
-                <span class="sbar-seg-label">5.8%</span>
+              <div class="sbar-seg" style="background: var(--ncp); --target-w: 5.7%" data-animate data-party="NCP"
+                data-pct="5.7%">
+                <span class="sbar-seg-label">5.7%</span>
               </div>
-              <div class="sbar-seg" style="background: var(--other); --target-w: 9.6%" data-animate data-party="Other"
-                data-pct="9.6%">
-                <span class="sbar-seg-label">9.6%</span>
+              <div class="sbar-seg" style="background: var(--other); --target-w: 9.4%" data-animate data-party="Other"
+                data-pct="9.4%">
+                <span class="sbar-seg-label">9.4%</span>
               </div>
             </div>
           </div>
@@ -1491,9 +1520,9 @@
                 data-pct="58.1%">
                 <span class="sbar-seg-label">58.1%</span>
               </div>
-              <div class="sbar-seg" style="background: var(--jamaat); --target-w: 34.9%" data-animate
-                data-party="Jamaat" data-pct="34.9%">
-                <span class="sbar-seg-label">34.9%</span>
+              <div class="sbar-seg" style="background: var(--jamaat); --target-w: 34.1%" data-animate
+                data-party="Jamaat" data-pct="34.1%">
+                <span class="sbar-seg-label">34.1%</span>
               </div>
               <div class="sbar-seg" style="background: var(--ncp); --target-w: 2.3%" data-animate data-party="NCP"
                 data-pct="2.3%"></div>
@@ -1594,16 +1623,16 @@
       <div class="chart-block" data-animate-group>
         <div class="chart-title">When Turnout Rises, So Does Jamaat</div>
         <div class="chart-subtitle">
-          BNP vs Jamaat seat wins across 5 turnout groups &mdash; 271
+          BNP Alliance vs Jamaat Alliance seat wins across 5 turnout groups &mdash; 271
           constituencies with voter data
         </div>
 
         <div class="chart-legend">
           <div class="legend-item">
-            <span class="legend-swatch" style="background: var(--bnp)"></span>BNP
+            <span class="legend-swatch" style="background: var(--bnp)"></span>BNP Alliance
           </div>
           <div class="legend-item">
-            <span class="legend-swatch" style="background: var(--jamaat)"></span>Jamaat
+            <span class="legend-swatch" style="background: var(--jamaat)"></span>Jamaat Alliance
           </div>
         </div>
 
@@ -1611,10 +1640,10 @@
         <div class="tq-chart" id="tq-chart">
           <div class="tq-group" data-animate>
             <div class="tq-bars">
-              <div class="tq-bar bnp-bar" style="--tq-h: 79.5%; --tq-color: var(--bnp)" title="BNP: 35 seats">
+              <div class="tq-bar bnp-bar" style="--tq-h: 77.8%; --tq-color: var(--bnp)" title="BNP: 35 seats">
                 <span class="tq-val">35</span>
               </div>
-              <div class="tq-bar jamaat-bar" style="--tq-h: 22.7%; --tq-color: var(--jamaat)" title="Jamaat: 10 seats">
+              <div class="tq-bar jamaat-bar" style="--tq-h: 22.2%; --tq-color: var(--jamaat)" title="Jamaat: 10 seats">
                 <span class="tq-val">10</span>
               </div>
             </div>
@@ -1624,11 +1653,11 @@
           </div>
           <div class="tq-group" data-animate>
             <div class="tq-bars">
-              <div class="tq-bar bnp-bar" style="--tq-h: 97.7%; --tq-color: var(--bnp)" title="BNP: 43 seats">
+              <div class="tq-bar bnp-bar" style="--tq-h: 95.6%; --tq-color: var(--bnp)" title="BNP: 43 seats">
                 <span class="tq-val">43</span>
               </div>
-              <div class="tq-bar jamaat-bar" style="--tq-h: 11.4%; --tq-color: var(--jamaat)" title="Jamaat: 5 seats">
-                <span class="tq-val">5</span>
+              <div class="tq-bar jamaat-bar" style="--tq-h: 13.3%; --tq-color: var(--jamaat)" title="Jamaat: 6 seats">
+                <span class="tq-val">6</span>
               </div>
             </div>
             <div class="tq-label">
@@ -1637,11 +1666,11 @@
           </div>
           <div class="tq-group" data-animate>
             <div class="tq-bars">
-              <div class="tq-bar bnp-bar" style="--tq-h: 100%; --tq-color: var(--bnp)" title="BNP: 44 seats">
-                <span class="tq-val">44</span>
+              <div class="tq-bar bnp-bar" style="--tq-h: 100%; --tq-color: var(--bnp)" title="BNP: 45 seats">
+                <span class="tq-val">45</span>
               </div>
-              <div class="tq-bar jamaat-bar" style="--tq-h: 18.2%; --tq-color: var(--jamaat)" title="Jamaat: 8 seats">
-                <span class="tq-val">8</span>
+              <div class="tq-bar jamaat-bar" style="--tq-h: 15.6%; --tq-color: var(--jamaat)" title="Jamaat: 7 seats">
+                <span class="tq-val">7</span>
               </div>
             </div>
             <div class="tq-label">
@@ -1650,11 +1679,11 @@
           </div>
           <div class="tq-group" data-animate>
             <div class="tq-bars">
-              <div class="tq-bar bnp-bar" style="--tq-h: 84.1%; --tq-color: var(--bnp)" title="BNP: 37 seats">
-                <span class="tq-val">37</span>
+              <div class="tq-bar bnp-bar" style="--tq-h: 80.0%; --tq-color: var(--bnp)" title="BNP: 36 seats">
+                <span class="tq-val">36</span>
               </div>
-              <div class="tq-bar jamaat-bar" style="--tq-h: 34.1%; --tq-color: var(--jamaat)" title="Jamaat: 15 seats">
-                <span class="tq-val">15</span>
+              <div class="tq-bar jamaat-bar" style="--tq-h: 35.6%; --tq-color: var(--jamaat)" title="Jamaat: 16 seats">
+                <span class="tq-val">16</span>
               </div>
             </div>
             <div class="tq-label">
@@ -1663,15 +1692,15 @@
           </div>
           <div class="tq-group" data-animate>
             <div class="tq-bars">
-              <div class="tq-bar bnp-bar" style="--tq-h: 70.5%; --tq-color: var(--bnp)" title="BNP: 31 seats">
+              <div class="tq-bar bnp-bar" style="--tq-h: 68.9%; --tq-color: var(--bnp)" title="BNP: 31 seats">
                 <span class="tq-val">31</span>
               </div>
-              <div class="tq-bar jamaat-bar" style="--tq-h: 54.5%; --tq-color: var(--jamaat)" title="Jamaat: 24 seats">
+              <div class="tq-bar jamaat-bar" style="--tq-h: 53.3%; --tq-color: var(--jamaat)" title="Jamaat: 24 seats">
                 <span class="tq-val">24</span>
               </div>
             </div>
             <div class="tq-label">
-              <span class="tq-range">65–78%</span>
+              <span class="tq-range">66–78%</span>
             </div>
           </div>
         </div>
@@ -1969,16 +1998,16 @@
           government will have to reckon with.
         </p>
         <p>
-          Khulna went to Jamaat. 25 of 36 seats, a 69% win rate. Rangpur was
+          Khulna went to Jamaat. 25 of 37 seats, a 68% win rate. Rangpur was
           effectively a dead heat &mdash; Jamaat 16, BNP 14 out of 33 seats.
           These are not close calls in a national race. These are regions
           where Jamaat is the dominant political force and BNP is the
           challenger. Rajshahi split more evenly, with BNP taking 28 and
-          Jamaat 10, but the margins were tight enough that the next election
+          Jamaat 11, but the margins were tight enough that the next election
           could look very different.
         </p>
         <p>
-          Go east and the picture inverts. Sylhet returned BNP in 18 of 19
+          Go east and the picture inverts. Sylhet returned BNP in 17 of 18
           seats &mdash; a near-total sweep of a division. Barishal was
           similarly lopsided. Dhaka, the most seat-rich division, gave BNP 57
           of 70, which is where the headline majority was built. The numbers
@@ -2001,11 +2030,11 @@
             <div class="legend-item">
               <span class="legend-swatch" style="
                     background: linear-gradient(to right, #2d9454, #0a2f14);
-                  "></span>BNP majority
+                  "></span>BNP Alliance majority
               <span style="font-size: 0.62rem; opacity: 0.6">(darker = stronger)</span>
             </div>
             <div class="legend-item">
-              <span class="legend-swatch" style="background: #b91c1c"></span>Jamaat majority
+              <span class="legend-swatch" style="background: #b91c1c"></span>Jamaat Alliance majority
             </div>
             <div class="legend-item">
               <span class="legend-swatch" style="background: #c2610c"></span>Contested
@@ -2616,21 +2645,21 @@
         Khulna: "#b91c1c", // Jamaat majority 69%
         Rangpur: "#c2610c", // Contested 49%
         Barisal: "#2a8a4e", // BNP 76%
-        Chattogram: "#1e6939", // BNP 83%
+        Chattogram: "#1e6939", // BNP 81%
         Dhaka: "#21723f", // BNP 81%
         Mymensingh: "#2b8f51", // BNP 75%
-        Rajshahi: "#2d9454", // BNP 74%
-        Sylhet: "#0a2f14", // BNP 95%
+        Rajshahi: "#2d9454", // BNP 72%
+        Sylhet: "#0a2f14", // BNP 94%
       };
 
       var DIV_DATA = {
         Khulna: {
-          bnp: 11,
+          bnp: 12,
           jamaat: 25,
-          total: 36,
+          total: 37,
           swing: 15,
           dominant: "Jamaat",
-          pct: 69.4,
+          pct: 67.6,
         },
         Rangpur: {
           bnp: 14,
@@ -2642,11 +2671,11 @@
         },
         Rajshahi: {
           bnp: 28,
-          jamaat: 10,
-          total: 38,
-          swing: 13,
+          jamaat: 11,
+          total: 39,
+          swing: 14,
           dominant: "BNP",
-          pct: 73.7,
+          pct: 71.8,
         },
         Mymensingh: {
           bnp: 18,
@@ -2673,9 +2702,9 @@
           pct: 81.4,
         },
         Chattogram: {
-          bnp: 49,
+          bnp: 47,
           jamaat: 3,
-          total: 59,
+          total: 58,
           swing: 11,
           dominant: "BNP",
           pct: 83.1,
@@ -2756,7 +2785,7 @@
         document.getElementById("md-verdict").style.color = verdictColor;
         document.getElementById("md-verdict").textContent =
           d.dominant === "Contested"
-            ? "Contested — Jamaat 49%"
+            ? "Contested — Jamaat Alliance 49%"
             : d.dominant + " stronghold — " + d.pct + "%";
         document.getElementById("md-bnp-seats").textContent = d.bnp;
         document.getElementById("md-jamaat-seats").textContent = d.jamaat;
