@@ -570,6 +570,75 @@
       margin-top: 0.75rem;
     }
 
+    /* ── TURNOUT QUINTILE GROUPED BAR CHART ── */
+    .tq-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
+      height: 200px;
+      padding-bottom: 0;
+      margin-top: 1.5rem;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .tq-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    .tq-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      width: 100%;
+      height: calc(100% - 42px);
+    }
+
+    .tq-bar {
+      flex: 1;
+      height: 0;
+      background: var(--tq-color);
+      border-radius: 3px 3px 0 0;
+      transition: height 0.7s cubic-bezier(.4,0,.2,1);
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .tq-group.animated .tq-bar { height: var(--tq-h); }
+
+    .tq-val {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 4px;
+      opacity: 0;
+      transition: opacity 0.3s ease 0.5s;
+    }
+    .tq-group.animated .tq-val { opacity: 1; }
+
+    .tq-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: center;
+      margin-top: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .tq-range {
+      font-size: 0.58rem;
+      color: var(--ink-faint);
+      font-weight: 400;
+    }
+
     /* ── SWING TABLE ── */
     @media (max-width: 640px) {
       .swing-grid { grid-template-columns: 1fr !important; }
@@ -745,7 +814,7 @@
       <span class="section-number">01 &mdash; The Result</span>
       <h2 class="section-heading">A Majority, Earned</h2>
       <div class="prose">
-        <p class="drop-cap">BNP won. Convincingly. They contested 291 seats and took 212. That is a working majority &mdash; no coalition haggling, no borrowed support. Just a mandate. Jamaat finished with 71 seats, the strongest result any Islamist party has ever posted in a Bangladeshi general election. NCP, in its very first election, won 6. The map is green. But the map does not tell you how close it actually was.</p>
+        <p class="drop-cap">BNP won. Convincingly. They contested 291 seats and took 212 &mdash; a working majority that does not require coalition haggling, borrowed support, or backroom deals to function. When you win by that margin, you govern on your own terms. That matters in Bangladesh, where the last decade taught everyone what minority dependence looks like. Jamaat finished with 71 seats, the strongest result any Islamist party has ever posted in a Bangladeshi general election &mdash; a number that would have been unthinkable five years ago. NCP, contesting its very first election, won 6. The map is green. But maps are blunt instruments, and this one flatters.</p>
       </div>
     </div>
 
@@ -802,9 +871,9 @@
       <span class="section-number">02 &mdash; How Close Was It, Really?</span>
       <h2 class="section-heading">The Seat Count Flatters</h2>
       <div class="prose">
-        <p>BNP won 212 seats. That is a big number. But big numbers can lie.</p>
-        <p>Nearly half of all contested seats &mdash; 46% &mdash; were decided by less than 15% of the vote. Almost 1 in 5 came down to a margin of under 5%. In Sirajganj-4, the winner beat the runner-up by 594 votes. Out of 320,000 cast. That is not a mandate. That is a coin flip at scale.</p>
-        <p>The seat count says landslide. The vote count says something closer to a country that is genuinely, deeply divided &mdash; and decided to move in one direction, but only just.</p>
+        <p>BNP won 212 seats. That is a large number, and it will dominate the headlines for weeks. But large numbers can hide uncomfortable things, and this one does.</p>
+        <p>Nearly half of all contested seats &mdash; 46% &mdash; were decided by a margin of less than 15% of total votes cast. Almost 1 in 5 came down to under 5%. These are not comfortable wins. These are seats where a slightly different day, a better-organized opponent, or a local issue that cut the wrong way could have changed the outcome. In Sirajganj-4, the winner beat the runner-up by 594 votes out of 320,000 cast. That is a margin of 0.18%. It is not a mandate. It is a coin flip at constituency scale.</p>
+        <p>The seat count says landslide. The vote count says something closer to a country that decided, this time, to move in one direction &mdash; but only just, and not everywhere.</p>
       </div>
     </div>
 
@@ -905,9 +974,9 @@
       <span class="section-number">03 &mdash; The Jamaat Question</span>
       <h2 class="section-heading">One in Three Close Races Goes to Jamaat</h2>
       <div class="prose">
-        <p>Jamaat is not a fringe party. The numbers do not allow that reading.</p>
-        <p>In the closest races &mdash; seats decided by under 5% &mdash; Jamaat converted 41% of their contests into wins. BNP converted 55%. That gap sounds wide. It is not. In blowout seats, BNP wins 88% of the time. In tight seats, that falls to 54%. The tighter the race, the more competitive Jamaat becomes.</p>
-        <p>There is one more thing. In constituencies with the highest voter turnout, Jamaat won 24 of 55 seats. When more people show up, Jamaat does better. That is not luck. That is a ground operation.</p>
+        <p>Jamaat is not a fringe party. The data does not allow that reading, and anyone who describes them as one is not looking at the numbers.</p>
+        <p>In the closest races &mdash; seats decided by under 5% of total votes &mdash; Jamaat converted 41% of their contests into wins. BNP converted 55%. That gap sounds significant. Look closer. In blowout seats, BNP wins 88% of the time. In the tightest seats, that number drops to 54%. The pattern is consistent and directional: the more competitive the race, the more Jamaat closes the distance. They are not winning everywhere. But wherever the margin is thin, they are showing up.</p>
+        <p>Then there is the turnout finding, which is the most important data point in this entire analysis. In constituencies with the highest voter turnout &mdash; the top quintile, where turnout ranged from 65% to 78% &mdash; Jamaat won 24 of 55 seats. In the lowest turnout quintile, they won just 10. When more people show up to vote, Jamaat does better. That is not a statistical quirk. That is an organisation that knows how to move its people.</p>
       </div>
     </div>
 
@@ -1002,6 +1071,65 @@
         <p class="viz-source">Source: The Daily Star, 14 February 2026, 7:00 AM &mdash; Each row sums to 100%. Segments narrower than ~5% suppress labels for legibility.</p>
       </div>
     </div>
+
+    <!-- Turnout quintile chart -->
+    <div class="chart-wrap mt-2">
+      <div class="chart-block" data-animate-group>
+        <div class="chart-title">When Turnout Rises, So Does Jamaat</div>
+        <div class="chart-subtitle">BNP vs Jamaat seat wins across 5 turnout quintiles &mdash; 271 constituencies with voter data</div>
+
+        <div class="chart-legend">
+          <div class="legend-item"><span class="legend-swatch" style="background:var(--bnp);"></span>BNP</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:var(--jamaat);"></span>Jamaat</div>
+        </div>
+
+        <!-- Grouped bar chart: 5 quintile groups, BNP + Jamaat bars side by side -->
+        <div class="tq-chart" id="tq-chart">
+          <div class="tq-group" data-animate>
+            <div class="tq-bars">
+              <div class="tq-bar bnp-bar"    style="--tq-h:79.5%; --tq-color:var(--bnp);"    title="BNP: 35 seats"><span class="tq-val">35</span></div>
+              <div class="tq-bar jamaat-bar" style="--tq-h:22.7%; --tq-color:var(--jamaat);" title="Jamaat: 10 seats"><span class="tq-val">10</span></div>
+            </div>
+            <div class="tq-label">Q1<br><span class="tq-range">17–44%</span></div>
+          </div>
+          <div class="tq-group" data-animate>
+            <div class="tq-bars">
+              <div class="tq-bar bnp-bar"    style="--tq-h:97.7%; --tq-color:var(--bnp);"    title="BNP: 43 seats"><span class="tq-val">43</span></div>
+              <div class="tq-bar jamaat-bar" style="--tq-h:11.4%; --tq-color:var(--jamaat);" title="Jamaat: 5 seats"><span class="tq-val">5</span></div>
+            </div>
+            <div class="tq-label">Q2<br><span class="tq-range">44–50%</span></div>
+          </div>
+          <div class="tq-group" data-animate>
+            <div class="tq-bars">
+              <div class="tq-bar bnp-bar"    style="--tq-h:100%; --tq-color:var(--bnp);"    title="BNP: 44 seats"><span class="tq-val">44</span></div>
+              <div class="tq-bar jamaat-bar" style="--tq-h:18.2%; --tq-color:var(--jamaat);" title="Jamaat: 8 seats"><span class="tq-val">8</span></div>
+            </div>
+            <div class="tq-label">Q3<br><span class="tq-range">50–56%</span></div>
+          </div>
+          <div class="tq-group" data-animate>
+            <div class="tq-bars">
+              <div class="tq-bar bnp-bar"    style="--tq-h:84.1%; --tq-color:var(--bnp);"    title="BNP: 37 seats"><span class="tq-val">37</span></div>
+              <div class="tq-bar jamaat-bar" style="--tq-h:34.1%; --tq-color:var(--jamaat);" title="Jamaat: 15 seats"><span class="tq-val">15</span></div>
+            </div>
+            <div class="tq-label">Q4<br><span class="tq-range">56–65%</span></div>
+          </div>
+          <div class="tq-group" data-animate>
+            <div class="tq-bars">
+              <div class="tq-bar bnp-bar"    style="--tq-h:70.5%; --tq-color:var(--bnp);"    title="BNP: 31 seats"><span class="tq-val">31</span></div>
+              <div class="tq-bar jamaat-bar" style="--tq-h:54.5%; --tq-color:var(--jamaat);" title="Jamaat: 24 seats"><span class="tq-val">24</span></div>
+            </div>
+            <div class="tq-label">Q5<br><span class="tq-range">65–78%</span></div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; padding: 0.5rem 0 0; font-family:'DM Sans',sans-serif; font-size:0.65rem; color:var(--ink-faint);">
+          <span>&larr; Lower turnout</span>
+          <span>Higher turnout &rarr;</span>
+        </div>
+
+        <p class="viz-source">Source: The Daily Star, 14 February 2026, 7:00 AM &mdash; 271 constituencies with registered voter data. Q1 = lowest 20% by turnout, Q5 = highest 20%. Each quintile contains ~54–55 seats.</p>
+      </div>
+    </div>
   </section>
 
   <div class="prose-wrap"><hr class="hr" /></div>
@@ -1012,9 +1140,9 @@
       <span class="section-number">04 &mdash; The Seats That Could Change Everything</span>
       <h2 class="section-heading">52 Seats on a Knife-Edge</h2>
       <div class="prose">
-        <p>52 seats were decided by less than 5% of votes cast. Change a few hundred votes in each, and the map looks different.</p>
-        <p>Sirajganj-4: Jamaat beat BNP by 594 votes. Out of 323,000. Three of the five closest seats in the country were Jamaat wins over BNP. If those flipped, BNP's majority still holds &mdash; but Jamaat's story changes completely.</p>
-        <p>Then there is the other end. Bandarban-1 was won by a 66% margin. Rangamati-1 by 65%. Chattogram-12 by 64%. BNP has seats they will never lose. And seats they nearly did. Both are true.</p>
+        <p>52 seats were decided by less than 5% of votes cast. That is nearly one in five contested seats. Change a few hundred votes in the right places, and the headline number looks very different.</p>
+        <p>Consider Sirajganj-4. Jamaat beat BNP by 594 votes out of 323,000 cast &mdash; a margin of 0.18%. Three of the five closest contests in the entire country were Jamaat wins over BNP. If those three seats flipped, BNP's majority still holds, but the national narrative around Jamaat's strength changes overnight. These are the seats that campaign managers will study for the next five years.</p>
+        <p>At the other end of the spectrum, BNP holds seats that are, in any practical sense, unlosable. Bandarban-1: 66% margin. Rangamati-1: 65%. Chattogram-12: 64%. In these constituencies, the opposition polled less than a third of the winner's total. The same party that nearly lost Sirajganj-4 by 594 votes won Bandarban-1 by over 115,000. BNP's electoral geography contains both realities, and understanding which is which will matter enormously when the next campaign begins.</p>
       </div>
     </div>
 
@@ -1224,10 +1352,10 @@
       <h2 class="section-heading">Two Bangladeshes</h2>
 
       <div class="prose">
-        <p>Bangladesh did not vote as one country. It voted as several.</p>
-        <p>Khulna went to Jamaat. 25 of 36 seats. That is 69%. Rangpur was a dead heat &mdash; Jamaat 16, BNP 14. These are not close calls in a national race. These are regional takeovers. Rajshahi gave BNP 28 seats, but Jamaat took 10 of the rest.</p>
-        <p>Go east and north and the picture flips. Sylhet gave BNP 18 of 19 seats. Barishal was nearly a clean sweep. Dhaka delivered 57 seats for BNP out of 70. That is where the majority was built. But even in Dhaka, 20 seats were decided by under 10%.</p>
-        <p>One country. Two very different elections happening inside it.</p>
+        <p>Bangladesh did not vote as one country. It voted as several, and the national seat count papers over divisions that any serious government will have to reckon with.</p>
+        <p>Khulna went to Jamaat. 25 of 36 seats, a 69% win rate. Rangpur was effectively a dead heat &mdash; Jamaat 16, BNP 14 out of 33 seats. These are not close calls in a national race. These are regions where Jamaat is the dominant political force and BNP is the challenger. Rajshahi split more evenly, with BNP taking 28 and Jamaat 10, but the margins were tight enough that the next election could look very different.</p>
+        <p>Go east and the picture inverts. Sylhet returned BNP in 18 of 19 seats &mdash; a near-total sweep of a division. Barishal was similarly lopsided. Dhaka, the most seat-rich division, gave BNP 57 of 70, which is where the headline majority was built. The numbers from Dhaka alone could make any election look like a landslide. But even in Dhaka, 20 seats were decided by under 10% &mdash; a reminder that the capital is not as settled as the seat count implies.</p>
+        <p>One country. Two very different elections happening inside it, and a government that will need to govern both.</p>
       </div>
     </div>
 
@@ -1394,9 +1522,9 @@
       <span class="section-number">05 &mdash; Closing</span>
       <h2 class="section-heading">With Great Power Comes Great Responsibility</h2>
       <div class="prose">
-        <p>BNP won. That is the result. But results have footnotes.</p>
-        <p>Nearly half of all seats were close enough to flip. Jamaat proved they can compete everywhere &mdash; not just in the west, not just in their strongholds. NCP showed up in competitive urban seats in their first attempt. The voters who picked BNP this time are watching. They have shown they will show up. They have also shown, in 52 seats, that they nearly did not.</p>
-        <p>A 212-seat majority is a gift. What gets done with it is the question Bangladesh will be answering for the next five years.</p>
+        <p>BNP won. That is the result, and it is a real one. A 212-seat majority is not a statistical accident. It reflects genuine support, effective organisation, and a public that was ready to vote for change. That deserves to be stated clearly.</p>
+        <p>But results have footnotes. Nearly half of all contested seats were close enough to flip on a different day. Jamaat has proven they can compete anywhere in the country &mdash; not just in Khulna, not just in their traditional heartlands. NCP, in its first election, showed up in some of the most competitive urban seats in the country. The voters who chose BNP are engaged, and they are watching. They have demonstrated they will turn out. In 52 seats, they also demonstrated that they nearly did not deliver.</p>
+        <p>A 212-seat majority is a significant gift. It comes with the expectation of delivery. The closeness of the margins in nearly half the country is not a footnote to be filed away &mdash; it is the most important political fact of the next five years. Bangladesh has spoken. But it has spoken carefully, and at some volume, in both directions at once.</p>
       </div>
     </div>
   </section>
