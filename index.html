@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Not a Wave. A Warning. — Bangladesh Election 2026</title>
+  <link rel="icon" href="https://www.thedailystar.net/themes/custom/swallow/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -110,12 +111,13 @@
 
     .hero__headline {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-size: clamp(1.8rem, 3.6vw, 3rem);
       font-weight: 900;
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--ink);
       margin-bottom: 1.25rem;
+      white-space: nowrap;
     }
 
     .hero__deck {
@@ -568,6 +570,88 @@
       margin-top: 0.75rem;
     }
 
+    /* ── SWING TABLE ── */
+    @media (max-width: 640px) {
+      .swing-grid { grid-template-columns: 1fr !important; }
+    }
+
+    .swing-table { display: flex; flex-direction: column; gap: 0; }
+
+    .swing-hdr {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: 0 0 0.4rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ink-muted);
+    }
+
+    .swing-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.42rem 0;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* animated background bar */
+    .swing-bar-wrap {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .swing-bar-fill {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 0;
+      background: var(--party-color);
+      opacity: 0.09;
+      transition: width 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .swing-row.animated .swing-bar-fill { width: var(--fill-w, 0%); }
+
+    .swing-seat {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink);
+      position: relative;
+      z-index: 1;
+    }
+    .swing-party {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      position: relative;
+      z-index: 1;
+    }
+    .bnp-tag    { background: color-mix(in srgb, var(--bnp) 15%, transparent);    color: var(--bnp); }
+    .jamaat-tag { background: color-mix(in srgb, var(--jamaat) 15%, transparent);  color: var(--jamaat); }
+    .ncp-tag    { background: color-mix(in srgb, var(--ncp) 15%, transparent);     color: var(--ncp); }
+    .other-tag  { background: color-mix(in srgb, var(--other) 15%, transparent);   color: var(--ink-muted); }
+
+    .swing-margin {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+      position: relative;
+      z-index: 1;
+    }
+
     /* ── UTILITY ── */
     .mt-2 { margin-top: 2rem; }
 
@@ -617,7 +701,7 @@
   <!-- ══ HERO ══ -->
   <section class="hero">
     <p class="kicker">13th National Parliament Election</p>
-    <h1 class="hero__headline">Not a Wave.<br>A Warning.</h1>
+    <h1 class="hero__headline">Not a Wave. A Warning.</h1>
     <p class="hero__deck">BNP won a commanding majority. The numbers underneath tell a more complicated &mdash; and consequential &mdash; story.</p>
     <div class="byline-row">
       <span class="byline">Ishmam Chowdhury</span>
@@ -922,11 +1006,223 @@
 
   <div class="prose-wrap"><hr class="hr" /></div>
 
-  <!-- ══ SECTION 04 ══ -->
+  <!-- ══ SECTION 04 — SWING SEATS ══ -->
   <section class="section">
     <div class="prose-wrap">
-      <span class="section-number">04 &mdash; The Geography of Competition</span>
+      <span class="section-number">04 &mdash; The Seats That Could Change Everything</span>
+      <h2 class="section-heading">52 Seats on a Knife-Edge</h2>
+      <div class="prose">
+        <p>Of the 289 constituencies where BNP, Jamaat, or NCP finished in the top two, <strong>52 were decided by less than 5%</strong> of total votes cast. In raw terms, a few thousand votes — sometimes fewer than a thousand — separated winners from losers. These are the seats that will define the next election before a single vote is cast.</p>
+        <p>The most startling: <strong>Sirajganj-4</strong>, where Jamaat beat BNP by just 594 votes out of 323,000 cast — a margin of 0.18%. Three of the top five closest races were Jamaat wins over BNP, hinting at where the opposition's structural vulnerability actually lies.</p>
+        <p>At the other end, BNP's fortress seats are genuinely impregnable. <strong>Bandarban, Rangamati, Chattogram-12</strong> — these were won by margins exceeding 60%, in some cases with the runner-up polling less than a fifth of the winner's total. Any honest reading of the seat map has to hold both realities simultaneously.</p>
+      </div>
+    </div>
+
+    <!-- Swing seats dual table chart -->
+    <div class="chart-wrap mt-2">
+      <div class="viz-card" data-animate-group>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;" class="swing-grid">
+
+          <!-- TOP 10 CLOSEST -->
+          <div>
+            <div class="chart-title" style="font-size:0.95rem;">Most Competitive</div>
+            <p class="chart-sub" style="margin-bottom:1rem;">Top 10 closest — decided by &lt;2% margin</p>
+            <div class="swing-table">
+              <div class="swing-hdr">
+                <span>Constituency</span>
+                <span style="text-align:right;">Margin</span>
+              </div>
+              <div class="swing-row" data-animate data-winner="bnp" data-pct="0.18" data-label="Sirajganj-4" data-winner-party="Jamaat" data-district="Rajshahi">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--jamaat);"></div>
+                </div>
+                <span class="swing-seat">Sirajganj-4</span>
+                <span class="swing-party jamaat-tag">Jamaat</span>
+                <span class="swing-margin">0.18%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="0.30" data-label="Madaripur-1" data-winner-party="Other" data-district="Dhaka">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--other);"></div>
+                </div>
+                <span class="swing-seat">Madaripur-1</span>
+                <span class="swing-party other-tag">Other</span>
+                <span class="swing-margin">0.30%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="0.55" data-label="Rajshahi-1" data-winner-party="Jamaat" data-district="Rajshahi">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--jamaat);"></div>
+                </div>
+                <span class="swing-seat">Rajshahi-1</span>
+                <span class="swing-party jamaat-tag">Jamaat</span>
+                <span class="swing-margin">0.55%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="0.62" data-label="Brahmanbaria-5" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Brahmanbaria-5</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">0.62%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="0.63" data-label="Cox's Bazar-4" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Cox's Bazar-4</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">0.63%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="0.68" data-label="Chattogram-14" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Chattogram-14</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">0.68%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="0.84" data-label="Rangpur-6" data-winner-party="Jamaat" data-district="Rangpur">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--jamaat);"></div>
+                </div>
+                <span class="swing-seat">Rangpur-6</span>
+                <span class="swing-party jamaat-tag">Jamaat</span>
+                <span class="swing-margin">0.84%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="0.88" data-label="Khulna-5" data-winner-party="BNP" data-district="Khulna">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Khulna-5</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">0.88%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="1.07" data-label="Gaibandha-4" data-winner-party="BNP" data-district="Rangpur">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Gaibandha-4</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">1.07%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="1.10" data-label="Dhaka-11" data-winner-party="NCP" data-district="Dhaka">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--ncp);"></div>
+                </div>
+                <span class="swing-seat">Dhaka-11</span>
+                <span class="swing-party ncp-tag">NCP</span>
+                <span class="swing-margin">1.10%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP 10 SAFEST -->
+          <div>
+            <div class="chart-title" style="font-size:0.95rem;">Least Competitive</div>
+            <p class="chart-sub" style="margin-bottom:1rem;">Top 10 safest — decided by &gt;55% margin</p>
+            <div class="swing-table">
+              <div class="swing-hdr">
+                <span>Constituency</span>
+                <span style="text-align:right;">Margin</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="65.97" data-label="Bandarban-1" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Bandarban-1</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">65.97%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="64.64" data-label="Chattogram-12" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Chattogram-12</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">64.64%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="64.60" data-label="Rangamati-1" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Rangamati-1</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">64.60%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="61.86" data-label="Kishoreganj-6" data-winner-party="BNP" data-district="Dhaka">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Kishoreganj-6</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">61.86%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="61.05" data-label="Chattogram-6" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Chattogram-6</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">61.05%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="60.29" data-label="Netrakona-4" data-winner-party="BNP" data-district="Mymensingh">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Netrakona-4</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">60.29%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="57.91" data-label="Cumilla-8" data-winner-party="BNP" data-district="Chattogram">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Cumilla-8</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">57.91%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="57.48" data-label="Gaibandha-1" data-winner-party="Jamaat" data-district="Rangpur">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--jamaat);"></div>
+                </div>
+                <span class="swing-seat">Gaibandha-1</span>
+                <span class="swing-party jamaat-tag">Jamaat</span>
+                <span class="swing-margin">57.48%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="55.80" data-label="Rajbari-2" data-winner-party="BNP" data-district="Dhaka">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Rajbari-2</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">55.80%</span>
+              </div>
+              <div class="swing-row" data-animate data-pct="55.04" data-label="Moulvibazar-4" data-winner-party="BNP" data-district="Sylhet">
+                <div class="swing-bar-wrap">
+                  <div class="swing-bar-fill" style="--party-color:var(--bnp);"></div>
+                </div>
+                <span class="swing-seat">Moulvibazar-4</span>
+                <span class="swing-party bnp-tag">BNP</span>
+                <span class="swing-margin">55.04%</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /swing-grid -->
+
+        <p class="viz-source">Source: The Daily Star, 14 February 2026, 7:00 AM &mdash; Left: closest 10 seats from 289 qualifying constituencies. Right: 10 most lopsided wins. Bar length proportional to margin within each panel.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="prose-wrap"><hr class="hr" /></div>
+
+  <!-- ══ SECTION 05 ══ -->
+  <section class="section">
+    <div class="prose-wrap">
+      <span class="section-number">05 &mdash; The Geography of Competition</span>
       <h2 class="section-heading">Two Bangladeshes</h2>
+
       <div class="prose">
         <p>The national picture obscures a sharp geographic divide.</p>
         <p>Khulna Division is, by any honest reading, Jamaat territory: they won 25 of 36 seats, a 69.4% win rate, with an average margin of just 14.9%. Rangpur was nearly split &mdash; Jamaat 16, BNP 14, out of 33 seats, with the highest concentration of swing seats in the country. In Rajshahi, BNP won 28 of 38 but Jamaat claimed 10.</p>
@@ -1162,6 +1458,24 @@
         });
       });
 
+    }());
+
+    /* ── Swing row background-bar animation ── */
+    (function () {
+      // For each viz-card containing swing rows, find max pct per column panel
+      // and set --fill-w as % of that max for a scaled bar effect.
+      // The two panels (closest / safest) are siblings inside .swing-grid divs.
+      document.querySelectorAll('.swing-grid').forEach(function (grid) {
+        grid.querySelectorAll('div > .swing-table').forEach(function (table) {
+          var rows = table.querySelectorAll('.swing-row[data-pct]');
+          var max = 0;
+          rows.forEach(function (r) { max = Math.max(max, parseFloat(r.dataset.pct)); });
+          rows.forEach(function (r) {
+            var pct = parseFloat(r.dataset.pct);
+            r.style.setProperty('--fill-w', (pct / max * 100).toFixed(1) + '%');
+          });
+        });
+      });
     }());
 
     /* ── Stacked bar tooltips ── */
