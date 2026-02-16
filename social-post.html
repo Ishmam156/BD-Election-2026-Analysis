@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1000">
+<title>Social Post — Not a Wave. A Warning.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1000px;
+    height: 1000px;
+    overflow: hidden;
+    font-family: "DM Sans", sans-serif;
+    background: #0f0f0f;
+    position: relative;
+    color: #faf7f2;
+  }
+
+  /* Subtle grain */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Top accent line */
+  .accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #2d9454 71.4%, #c2610c 71.4%, #c2610c 97.3%, #777 97.3%);
+    z-index: 5;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 56px 48px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(250,247,242,0.1);
+    margin-bottom: 36px;
+  }
+
+  .badge {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.45);
+  }
+
+  .flag-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .flag-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .flag-dots .green { background: #006A4E; }
+  .flag-dots .red { background: #F42A41; }
+
+  /* Headline */
+  .headline-section {
+    margin-bottom: 40px;
+  }
+
+  .kicker {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #d43d31;
+    margin-bottom: 14px;
+  }
+
+  .headline {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    color: #faf7f2;
+    margin-bottom: 16px;
+  }
+
+  .deck {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5;
+    color: rgba(250,247,242,0.5);
+    max-width: 600px;
+  }
+
+  /* Data cards */
+  .data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(250,247,242,0.08);
+    border: 1px solid rgba(250,247,242,0.08);
+    flex: 1;
+    margin-bottom: 36px;
+  }
+
+  .data-card {
+    background: #0f0f0f;
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .data-card .label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.35);
+    margin-bottom: 8px;
+  }
+
+  .data-card .value {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .data-card .value.bnp { color: #2d9454; }
+  .data-card .value.jamaat { color: #c2610c; }
+  .data-card .value.neutral { color: #d43d31; }
+
+  .data-card .sub {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: rgba(250,247,242,0.4);
+    margin-top: 6px;
+    line-height: 1.35;
+  }
+
+  /* Seat bar */
+  .seat-bar-section {
+    margin-bottom: 28px;
+  }
+
+  .bar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .bar-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.3);
+  }
+
+  .seat-bar {
+    height: 10px;
+    display: flex;
+    gap: 2px;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  .seat-bar .bnp-seg {
+    background: #2d9454;
+    width: 71.4%;
+    border-radius: 1px;
+  }
+
+  .seat-bar .jamaat-seg {
+    background: #c2610c;
+    width: 25.9%;
+    border-radius: 1px;
+  }
+
+  .seat-bar .other-seg {
+    background: #555;
+    width: 2.7%;
+    border-radius: 1px;
+  }
+
+  .bar-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .bar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+    color: rgba(250,247,242,0.4);
+  }
+
+  .bar-legend-item .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 1px;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(250,247,242,0.08);
+    padding-top: 18px;
+    margin-top: auto;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .footer-text {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(250,247,242,0.25);
+    letter-spacing: 0.02em;
+  }
+
+  .cta {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(250,247,242,0.55);
+  }
+
+  .cta span {
+    color: #d43d31;
+  }
+</style>
+</head>
+<body>
+
+<div class="accent-line"></div>
+
+<div class="container">
+  <div class="header">
+    <span class="badge">Bangladesh Election 2026</span>
+    <div class="flag-dots">
+      <span class="green"></span>
+      <span class="red"></span>
+    </div>
+  </div>
+
+  <div class="headline-section">
+    <div class="kicker">Data &middot; Analysis &middot; Editorial</div>
+    <h1 class="headline">Not a Wave.<br>A Warning.</h1>
+    <p class="deck">BNP&rsquo;s 55% of votes became 71% of seats &mdash; but nearly half of all races were decided by less than 15%.</p>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <span class="label">BNP Alliance</span>
+      <span class="value bnp">212</span>
+      <span class="sub">seats won</span>
+    </div>
+    <div class="data-card">
+      <span class="label">Jamaat Alliance</span>
+      <span class="value jamaat">77</span>
+      <span class="sub">highest ever</span>
+    </div>
+    <div class="data-card">
+      <span class="label">Knife-edge</span>
+      <span class="value neutral">55</span>
+      <span class="sub">seats decided by<br>&lt; 5% margin</span>
+    </div>
+  </div>
+
+  <div class="seat-bar-section">
+    <div class="bar-header">
+      <span class="bar-label">Parliamentary Seats &mdash; 297 declared</span>
+    </div>
+    <div class="seat-bar">
+      <div class="bnp-seg"></div>
+      <div class="jamaat-seg"></div>
+      <div class="other-seg"></div>
+    </div>
+    <div class="bar-legend">
+      <div class="bar-legend-item">
+        <span class="dot" style="background:#2d9454"></span> BNP 71.4%
+      </div>
+      <div class="bar-legend-item">
+        <span class="dot" style="background:#c2610c"></span> Jamaat 25.9%
+      </div>
+      <div class="bar-legend-item">
+        <span class="dot" style="background:#555"></span> Others 2.7%
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <span class="footer-text">Source: The Daily Star &middot; 297 of 300 constituencies</span>
+      <span class="footer-text">Winner &amp; runner-up data &middot; February 2026</span>
+    </div>
+    <span class="cta">Read the full analysis <span>&rarr;</span></span>
+  </div>
+</div>
+
+</body>
+</html>
