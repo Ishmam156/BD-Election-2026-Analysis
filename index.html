@@ -333,6 +333,27 @@
       font-style: italic;
     }
 
+    .analyst-note {
+      background: #f5f0e8;
+      border-left: 3px solid var(--accent-red);
+      padding: 1rem 1.25rem;
+      margin-top: 1.25em;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.8rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .analyst-note strong {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 0.35rem;
+    }
+
     .viz-source {
       font-family: "DM Sans", sans-serif;
       font-size: 0.65rem;
@@ -415,6 +436,32 @@
 
     .pvote-compare .sbar-seg-label {
       font-size: 0.66rem;
+    }
+
+    .pvote-compare .sbar-seg-label .sbar-seg-name {
+      margin-right: 0.3em;
+    }
+
+    @media (max-width: 540px) {
+      .pvote-compare .sbar-track {
+        height: 32px;
+      }
+
+      .pvote-compare .sbar-seg-label .sbar-seg-name {
+        display: none;
+      }
+
+      .pvote-compare .sbar-seg[data-party="Others"] .sbar-seg-label {
+        display: none;
+      }
+
+      .pvote-compare .sbar-seg-label {
+        font-size: 0.62rem;
+      }
+
+      .pvote-compare .sbar-label {
+        font-size: 0.58rem;
+      }
     }
 
     .pvote-legend {
@@ -1507,6 +1554,16 @@
           and where those votes went tells a different story from where the
           seats landed.
         </p>
+        <div class="analyst-note">
+          <strong>A note on data</strong>
+          All analysis in this article - vote shares, margins, competitiveness rankings,
+          and divisional breakdowns - is derived from the winner and runner-up tallies
+          published for 297 constituencies per constituency by The Daily Star, the only
+          candidate-level data available at the time of writing. Votes for third-place and
+          lower candidates are not captured in this dataset. As a result, alliance vote shares
+          will appear higher, and margins narrower, than those calculated from full ballot
+          counts.
+        </div>
       </div>
     </div>
 
@@ -1540,11 +1597,11 @@
             <div class="sbar-track">
               <div class="sbar-seg" style="background:var(--bnp);--target-w:54.8%" data-animate data-party="BNP"
                 data-pct="54.8%">
-                <span class="sbar-seg-label">BNP Alliance 54.8%</span>
+                <span class="sbar-seg-label"><span class="sbar-seg-name">BNP Alliance</span>54.8%</span>
               </div>
               <div class="sbar-seg" style="background:var(--jamaat);--target-w:39.5%" data-animate data-party="Jamaat"
                 data-pct="39.5%">
-                <span class="sbar-seg-label">Jamaat Alliance 39.5%</span>
+                <span class="sbar-seg-label"><span class="sbar-seg-name">Jamaat Alliance</span>39.5%</span>
               </div>
               <div class="sbar-seg" style="background:var(--other);--target-w:5.7%" data-animate data-party="Others"
                 data-pct="5.7%">
@@ -1559,11 +1616,11 @@
             <div class="sbar-track">
               <div class="sbar-seg" style="background:var(--bnp);--target-w:71.4%" data-animate data-party="BNP"
                 data-pct="71.4%">
-                <span class="sbar-seg-label">BNP Alliance 71.4%</span>
+                <span class="sbar-seg-label"><span class="sbar-seg-name">BNP Alliance</span>71.4%</span>
               </div>
               <div class="sbar-seg" style="background:var(--jamaat);--target-w:25.9%" data-animate data-party="Jamaat"
                 data-pct="25.9%">
-                <span class="sbar-seg-label">Jamaat Alliance 25.9%</span>
+                <span class="sbar-seg-label"><span class="sbar-seg-name">Jamaat Alliance</span>25.9%</span>
               </div>
               <div class="sbar-seg" style="background:var(--other);--target-w:2.7%" data-animate data-party="Others"
                 data-pct="2.7%"></div>
@@ -2772,8 +2829,8 @@
       <div class="prose">
         <p>
           Seat counts show who won each division. Vote share shows how
-          competitive it was. And the conversion &mdash; how a vote lead
-          became a seat lead &mdash; shows where the electoral map was
+          competitive it was. And the conversion - how a vote lead
+          became a seat lead - shows where the electoral map was
           most and least fair to each party.
         </p>
         <p>
@@ -2787,7 +2844,7 @@
           Jamaat&rsquo;s 10-point vote lead became a 39-point seat lead.
         </p>
         <p>
-          The same ballot paper, the same election &mdash; but the map
+          The same ballot paper, the same election - but the map
           it produced depended almost entirely on where you live.
         </p>
       </div>
@@ -2799,7 +2856,7 @@
         <div style="padding: 1.5rem 1.5rem 0.75rem">
           <div class="chart-title">Vote Share &amp; Seat Conversion by Division</div>
           <div class="chart-subtitle">
-            How each alliance&rsquo;s vote lead translated &mdash; or didn&rsquo;t &mdash; into a seat lead
+            How each alliance&rsquo;s vote lead translated - or didn&rsquo;t - into a seat lead
           </div>
         </div>
         <div class="dvs3-chart">
