@@ -1,254 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=1200">
-<title>OG Image — Not a Wave. A Warning.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>OG Image — Not a Wave. A Warning.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  body {
-    width: 1200px;
-    height: 630px;
-    overflow: hidden;
-    font-family: "DM Sans", sans-serif;
-    background: #faf7f2;
-    position: relative;
-  }
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      font-family: "DM Sans", sans-serif;
+      background: #faf7f2;
+      position: relative;
+    }
 
-  /* Subtle paper texture */
-  body::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.008) 2px,
-        rgba(0,0,0,0.008) 3px
-      );
-    pointer-events: none;
-    z-index: 1;
-  }
+    /* Subtle paper texture */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.008) 2px,
+          rgba(0, 0, 0, 0.008) 3px);
+      pointer-events: none;
+      z-index: 1;
+    }
 
-  .frame {
-    position: absolute;
-    inset: 20px;
-    border: 1px solid rgba(26,26,26,0.12);
-    z-index: 2;
-  }
+    .frame {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      z-index: 2;
+    }
 
-  .container {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    padding: 44px 56px 40px;
-  }
+    .container {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 44px 56px 40px;
+    }
 
-  /* Top bar */
-  .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-bottom: 16px;
-    border-bottom: 2px solid #1a1a1a;
-    margin-bottom: 32px;
-  }
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1a1a1a;
+      margin-bottom: 32px;
+    }
 
-  .edition-label {
-    font-family: "DM Sans", sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #1a1a1a;
-  }
+    .edition-label {
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+    }
 
-  .date-label {
-    font-family: "DM Sans", sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    color: #888;
-  }
+    .date-label {
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: #888;
+    }
 
-  /* Main content */
-  .main {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 48px;
-    align-items: center;
-  }
+    /* Main content */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: center;
+    }
 
-  .headline-block {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+    .headline-block {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-  .kicker {
-    font-family: "DM Sans", sans-serif;
-    font-size: 12.5px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #d43d31;
-  }
+    .kicker {
+      font-family: "DM Sans", sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d43d31;
+    }
 
-  .headline {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 64px;
-    font-weight: 900;
-    line-height: 1.02;
-    color: #1a1a1a;
-    letter-spacing: -0.02em;
-  }
+    .headline {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #1a1a1a;
+      letter-spacing: -0.02em;
+    }
 
-  .deck {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 19px;
-    font-weight: 400;
-    font-style: italic;
-    line-height: 1.45;
-    color: #555;
-    max-width: 480px;
-    margin-top: 4px;
-  }
+    .deck {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 19px;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.45;
+      color: #555;
+      max-width: 480px;
+      margin-top: 4px;
+    }
 
-  /* Right data column */
-  .data-col {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-left: 1px solid rgba(26,26,26,0.12);
-    padding-left: 40px;
-  }
+    /* Right data column */
+    .data-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 1px solid rgba(26, 26, 26, 0.12);
+      padding-left: 40px;
+    }
 
-  .seat-block {
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(26,26,26,0.08);
-  }
+    .seat-block {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+    }
 
-  .seat-block:last-child {
-    border-bottom: none;
-  }
+    .seat-block:last-child {
+      border-bottom: none;
+    }
 
-  .seat-number {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 52px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
+    .seat-number {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
 
-  .seat-number.bnp { color: #2d9454; }
-  .seat-number.jamaat { color: #c2610c; }
+    .seat-number.bnp {
+      color: #2d9454;
+    }
 
-  .seat-label {
-    font-family: "DM Sans", sans-serif;
-    font-size: 11.5px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #888;
-    margin-top: 2px;
-  }
+    .seat-number.jamaat {
+      color: #c2610c;
+    }
 
-  /* Bottom bar with seat strip */
-  .bottom-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-self: end;
-  }
+    .seat-label {
+      font-family: "DM Sans", sans-serif;
+      font-size: 11.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-top: 2px;
+    }
 
-  .seat-strip {
-    height: 8px;
-    display: flex;
-    border-radius: 1px;
-    overflow: hidden;
-    width: 100%;
-  }
+    /* Bottom bar with seat strip */
+    .bottom-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-self: end;
+    }
 
-  .seat-strip .bnp-seg {
-    background: #2d9454;
-    width: 71.4%;
-  }
+    .seat-strip {
+      height: 8px;
+      display: flex;
+      border-radius: 1px;
+      overflow: hidden;
+      width: 100%;
+    }
 
-  .seat-strip .jamaat-seg {
-    background: #c2610c;
-    width: 25.9%;
-  }
+    .seat-strip .bnp-seg {
+      background: #2d9454;
+      width: 71.4%;
+    }
 
-  .seat-strip .other-seg {
-    background: #bbb;
-    width: 2.7%;
-  }
+    .seat-strip .jamaat-seg {
+      background: #c2610c;
+      width: 25.9%;
+    }
 
-  .strip-labels {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+    .seat-strip .other-seg {
+      background: #bbb;
+      width: 2.7%;
+    }
 
-  .strip-label {
-    font-family: "DM Sans", sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    color: #999;
-    letter-spacing: 0.04em;
-  }
-</style>
+    .strip-labels {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .strip-label {
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      color: #999;
+      letter-spacing: 0.04em;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="frame"></div>
+  <div class="frame"></div>
 
-<div class="container">
-  <div class="top-bar">
-    <span class="edition-label">Bangladesh Election 2026 &mdash; An Editorial</span>
-    <span class="date-label">Data &amp; Analysis</span>
-  </div>
-
-  <div class="main">
-    <div class="headline-block">
-      <span class="kicker">Election Analysis</span>
-      <h1 class="headline">Not a Wave.<br>A Warning.</h1>
-      <p class="deck">BNP&rsquo;s 55% of votes became 71% of seats. Jamaat won 77 &mdash; their highest ever. The map is green, but the margins tell a different story.</p>
+  <div class="container">
+    <div class="top-bar">
+      <span class="edition-label">Bangladesh Election 2026 - An Editorial</span>
+      <span class="date-label">Data &amp; Analysis</span>
     </div>
 
-    <div class="data-col">
-      <div class="seat-block">
-        <div class="seat-number bnp">212</div>
-        <div class="seat-label">BNP Alliance Seats</div>
+    <div class="main">
+      <div class="headline-block">
+        <span class="kicker">Election Analysis</span>
+        <h1 class="headline">Not a Wave. A Warning.</h1>
+        <p class="deck">BNP&rsquo;s 55% of votes became 71% of seats. Jamaat won 77 - their highest ever. The map
+          is green, but the margins tell a different story.</p>
       </div>
-      <div class="seat-block">
-        <div class="seat-number jamaat">77</div>
-        <div class="seat-label">Jamaat Alliance Seats</div>
+
+      <div class="data-col">
+        <div class="seat-block">
+          <div class="seat-number bnp">212</div>
+          <div class="seat-label">BNP Alliance Seats</div>
+        </div>
+        <div class="seat-block">
+          <div class="seat-number jamaat">77</div>
+          <div class="seat-label">Jamaat Alliance Seats</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="strip-labels">
+        <span class="strip-label">Parliamentary Seats &mdash; 297 declared</span>
+        <span class="strip-label">Others 8</span>
+      </div>
+      <div class="seat-strip">
+        <div class="bnp-seg"></div>
+        <div class="jamaat-seg"></div>
+        <div class="other-seg"></div>
       </div>
     </div>
   </div>
-
-  <div class="bottom-bar">
-    <div class="strip-labels">
-      <span class="strip-label">Parliamentary Seats &mdash; 297 declared</span>
-      <span class="strip-label">Others 8</span>
-    </div>
-    <div class="seat-strip">
-      <div class="bnp-seg"></div>
-      <div class="jamaat-seg"></div>
-      <div class="other-seg"></div>
-    </div>
-  </div>
-</div>
 
 </body>
+
 </html>
